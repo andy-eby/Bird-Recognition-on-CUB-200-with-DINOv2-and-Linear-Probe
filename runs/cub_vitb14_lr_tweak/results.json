@@ -1,0 +1,122 @@
+{
+  "model_variant": "vitb14",
+  "dataset": "CUB-200-2011",
+  "classifier": "sklearn-logreg",
+  "best_c": 10.0,
+  "test_top1": 89.38557128063513,
+  "total_training_time_sec": 671.6986274719238,
+  "hyperparameters": {
+    "model": "Pipeline(StandardScaler -> LogisticRegression)",
+    "solvers": [
+      "lbfgs",
+      "saga"
+    ],
+    "penalties": [
+      "l2",
+      "l1",
+      "elasticnet"
+    ],
+    "l1_ratio_values": [
+      0.1,
+      0.3,
+      0.5,
+      0.7
+    ],
+    "max_iter": 4000,
+    "tol_values": [
+      0.0001,
+      0.0003,
+      0.001
+    ],
+    "c_values": [
+      0.0001,
+      0.0003,
+      0.001,
+      0.003,
+      0.01,
+      0.03,
+      0.1,
+      0.3,
+      1.0,
+      3.0,
+      10.0,
+      30.0,
+      100.0
+    ],
+    "cv_folds": 5,
+    "cv_strategy": "StratifiedKFold(shuffle=True, random_state=42)",
+    "search_mode": "quick",
+    "feature_batch_size": 128,
+    "device": "auto",
+    "cache_dir": "./cache",
+    "output_dir": "./runs/cub_vitb14_lr_tweak"
+  },
+  "grid_search_results": {
+    "best_params": {
+      "clf__C": 10.0,
+      "clf__max_iter": 2000,
+      "clf__multi_class": "multinomial",
+      "clf__penalty": "l2",
+      "clf__solver": "lbfgs",
+      "clf__tol": 0.0001
+    },
+    "best_score": 0.8896296296296298,
+    "cv_results": {
+      "mean_test_scores": [
+        0.8875925925925927,
+        0.8885185185185186,
+        0.888888888888889,
+        0.8896296296296298
+      ],
+      "std_test_scores": [
+        0.006323470769986633,
+        0.006536800961008424,
+        0.00579721327499944,
+        0.005689737591013789
+      ],
+      "params": [
+        {
+          "clf__C": 0.3,
+          "clf__max_iter": 2000,
+          "clf__multi_class": "multinomial",
+          "clf__penalty": "l2",
+          "clf__solver": "lbfgs",
+          "clf__tol": 0.0001
+        },
+        {
+          "clf__C": 1.0,
+          "clf__max_iter": 2000,
+          "clf__multi_class": "multinomial",
+          "clf__penalty": "l2",
+          "clf__solver": "lbfgs",
+          "clf__tol": 0.0001
+        },
+        {
+          "clf__C": 3.0,
+          "clf__max_iter": 2000,
+          "clf__multi_class": "multinomial",
+          "clf__penalty": "l2",
+          "clf__solver": "lbfgs",
+          "clf__tol": 0.0001
+        },
+        {
+          "clf__C": 10.0,
+          "clf__max_iter": 2000,
+          "clf__multi_class": "multinomial",
+          "clf__penalty": "l2",
+          "clf__solver": "lbfgs",
+          "clf__tol": 0.0001
+        }
+      ]
+    }
+  },
+  "test_top5": 98.42940973420781,
+  "evaluation": {
+    "model": "runs\\cub_vitb14_lr_tweak\\sklearn_classifier.pkl",
+    "test_npz": "cache\\test_features.npz",
+    "figures_dir": "runs\\cub_vitb14_lr_tweak\\figures",
+    "tsne_color_mode": "class",
+    "tsne_samples": 1500,
+    "seed": 42
+  }
+}

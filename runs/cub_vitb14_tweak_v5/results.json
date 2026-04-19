@@ -1,0 +1,70 @@
+{
+  "model_variant": "vitb14",
+  "dataset": "CUB-200-2011",
+  "classifier": "sklearn-logreg-fast-tuned",
+  "best_c": 17.5,
+  "test_top1": 89.40283051432516,
+  "test_top5": 98.3603727994477,
+  "total_training_time_sec": 279.3325836658478,
+  "hyperparameters": {
+    "model": "Pipeline(StandardScaler -> LogisticRegression)",
+    "max_iter": 1200,
+    "tol": 0.001,
+    "solver": "lbfgs",
+    "multi_class": "multinomial",
+    "c_values": [
+      15.0,
+      17.5,
+      20.0,
+      22.5
+    ],
+    "cv_folds": 5,
+    "cv_strategy": "StratifiedKFold(shuffle=True, random_state=42)",
+    "feature_batch_size": 128,
+    "device": "auto",
+    "cache_dir": "./cache",
+    "output_dir": "./runs/cub_vitb14_tweak_v5"
+  },
+  "grid_search_results": {
+    "best_params": {
+      "classifier__C": 17.5
+    },
+    "best_score": 0.8898148148148148,
+    "cv_results": {
+      "mean_test_scores": [
+        0.8896296296296295,
+        0.8898148148148148,
+        0.8896296296296298,
+        0.8898148148148148
+      ],
+      "std_test_scores": [
+        0.0053158148497804945,
+        0.005856069741052552,
+        0.005629142279100227,
+        0.005462178223612071
+      ],
+      "params": [
+        {
+          "classifier__C": 15.0
+        },
+        {
+          "classifier__C": 17.5
+        },
+        {
+          "classifier__C": 20.0
+        },
+        {
+          "classifier__C": 22.5
+        }
+      ]
+    }
+  },
+  "evaluation": {
+    "model": "runs\\cub_vitb14_tweak_v5\\sklearn_classifier.pkl",
+    "test_npz": "cache\\test_features.npz",
+    "figures_dir": "runs\\cub_vitb14_tweak_v5\\figures",
+    "tsne_color_mode": "class",
+    "tsne_samples": 1500,
+    "seed": 42
+  }
+}

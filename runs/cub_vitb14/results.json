@@ -1,0 +1,60 @@
+{
+  "model_variant": "vitb14",
+  "dataset": "CUB-200-2011",
+  "classifier": "both",
+  "best_val_accuracy": 77.94612646102905,
+  "test_top1": 80.2209181912323,
+  "test_top5": 97.27304107697618,
+  "total_training_time_sec": 1823.4902350902557,
+  "hyperparameters": {
+    "epochs": 100,
+    "lr": 0.1,
+    "scheduler": "cosine",
+    "linear_batch_size": 1024,
+    "feature_batch_size": 128,
+    "device": "auto",
+    "cache_dir": "./cache",
+    "output_dir": "./runs/cub_vitb14",
+    "classifier": "both",
+    "sklearn_c_values": [
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ],
+    "sklearn_c1_threshold_for_warning": 75.0,
+    "sklearn_cv_folds": 5,
+    "optimizer": "SGD",
+    "momentum": 0.9,
+    "weight_decay": 0.0,
+    "scheduler_impl": "CosineAnnealingLR(T_max=epochs) when scheduler=cosine",
+    "loss": "CrossEntropyLoss"
+  },
+  "version_a_metrics": {
+    "train_acc_c1": 92.98148148148148,
+    "test_acc_c1": 88.19468415602347,
+    "best_c": 10.0,
+    "best_test_acc": 89.26475664480496
+  },
+  "version_a_grid_search_metrics": {
+    "best_c": 10.0,
+    "best_cv_score": 88.8888888888889,
+    "test_acc": 89.26475664480496,
+    "cv_folds": 5
+  },
+  "version_b_metrics": {
+    "best_val_top1": 77.94612646102905,
+    "test_top1": 80.22091827970313,
+    "test_top5": 97.27304121688353,
+    "scheduler": "cosine",
+    "lr": 0.1
+  },
+  "evaluation": {
+    "checkpoint": "runs\\cub_vitb14\\best_linear_probe.pt",
+    "test_npz": "cache\\test_features.npz",
+    "figures_dir": "runs\\cub_vitb14\\figures",
+    "tsne_color_mode": "class",
+    "tsne_samples": 1500,
+    "seed": 42
+  }
+}
